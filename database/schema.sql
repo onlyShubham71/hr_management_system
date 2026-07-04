@@ -1,4 +1,4 @@
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
     employee_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
     first_name VARCHAR(50) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE employees (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE employee_profile (
+CREATE TABLE IF NOT EXISTS employee_profile (
     profile_id INT AUTO_INCREMENT PRIMARY KEY,
     employee_id INT NOT NULL,
     date_of_birth DATE,
@@ -21,7 +21,7 @@ CREATE TABLE employee_profile (
         ON DELETE CASCADE
 );
 
-CREATE TABLE attendance (
+CREATE TABLE IF NOT EXISTS attendance (
     attendance_id INT AUTO_INCREMENT PRIMARY KEY,
     employee_id INT NOT NULL,
     attendance_date DATE NOT NULL,
